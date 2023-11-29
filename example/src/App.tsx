@@ -1,25 +1,6 @@
 import * as React from 'react';
-
-import { StyleSheet, View } from 'react-native';
-import { TencentLbsView } from 'react-native-tencent-lbs';
+import { QMapExample } from './QMap/QMapExample';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <TencentLbsView color="#32a852" style={styles.box} />
-    </View>
-  );
+  return <QMapExample />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

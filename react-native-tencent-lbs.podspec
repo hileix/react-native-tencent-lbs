@@ -38,5 +38,7 @@ Pod::Spec.new do |s|
     s.dependency "RCTTypeSafety"
     s.dependency "ReactCommon/turbomodule/core"
    end
-  end    
+  end  
+  
+  s.dependency "Tencent-MapSDK", "~> 5.1.0"
 end

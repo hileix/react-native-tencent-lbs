@@ -3,6 +3,7 @@ import {
   UIManager,
   Platform,
   type ViewStyle,
+  NativeModules,
 } from 'react-native';
 
 const LINKING_ERROR =
@@ -16,11 +17,17 @@ type TencentLbsProps = {
   style: ViewStyle;
 };
 
-const ComponentName = 'TencentLbsView';
+const ComponentName = 'RNTQMap';
 
-export const TencentLbsView =
+export const QMapView =
   UIManager.getViewManagerConfig(ComponentName) != null
     ? requireNativeComponent<TencentLbsProps>(ComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
+
+const { QMapModule } = NativeModules;
+
+const { setKeys, setPrivacyAgreement, qCircleContainsCoordinate } = QMapModule;
+
+export { setKeys, setPrivacyAgreement, qCircleContainsCoordinate };
